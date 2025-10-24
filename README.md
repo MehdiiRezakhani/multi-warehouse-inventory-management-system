@@ -23,7 +23,6 @@ A modern, full-featured inventory management system built for sustainable produc
 - **Automatic Detection**: Identifies critical, low, adequate, and overstocked items
 - **Smart Recommendations**: Calculates optimal reorder quantities based on stock levels
 - **Acknowledgement Tracking**: Mark alerts as handled with notes for audit trails
-- **Categorized Views**: Tabbed interface for different alert priorities
 
 ### 🎨 Modern UI/UX
 - **Minimal Design**: Clean, professional interface with eco-friendly aesthetics
