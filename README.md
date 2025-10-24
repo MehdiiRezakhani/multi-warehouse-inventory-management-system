@@ -2,6 +2,7 @@
 
 A modern, full-featured inventory management system built for sustainable product distribution companies. Manage multi-warehouse operations with real-time insights, intelligent alerts, and seamless stock transfers.
 
+Video Walkthrough: https://youtu.be/YFQOhAmtwTI
 ---
 
 ## ✨ Features
