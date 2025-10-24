@@ -46,13 +46,30 @@ export default function EditProduct() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const res = await fetch(`/api/products/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(product),
-    });
-    if (res.ok) {
+    
+    try {
+      const res = await fetch(`/api/products/${id}`, {
+        method: 'PUT',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(product),
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ message: 'Update failed' }));
+        console.error('Update error:', errorData);
+        alert(`Error: ${errorData.message || 'Failed to update product'}`);
+        return;
+      }
+
+      const data = await res.json();
+      console.log('Product updated:', data);
       router.push('/products');
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Network error: Failed to update product. Please try again.');
     }
   };
 

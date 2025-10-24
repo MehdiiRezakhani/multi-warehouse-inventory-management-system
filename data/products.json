@@ -38,13 +38,5 @@
     "category": "Cups",
     "unitCost": 0.6,
     "reorderPoint": 600
-  },
-  {
-    "sku": "ss343",
-    "name": "sdsds",
-    "category": "wesds",
-    "unitCost": 232,
-    "reorderPoint": 232,
-    "id": 6
   }
 ]

@@ -10,7 +10,24 @@ interface AlertData {
   notes: string;
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '1mb',
+    },
+  },
+};
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept');
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
   const alertsPath = path.join(process.cwd(), 'data', 'alerts.json');
   const productsPath = path.join(process.cwd(), 'data', 'products.json');
   const stockPath = path.join(process.cwd(), 'data', 'stock.json');
@@ -90,6 +107,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       res.status(500).json({ message: 'Internal server error', error: (error as Error).message });
     }
   } else {
-    res.status(405).json({ message: 'Method Not Allowed' });
+    res.setHeader('Allow', ['GET', 'POST', 'OPTIONS']);
+    res.status(405).json({ message: `Method ${req.method} Not Allowed` });
   }
 }

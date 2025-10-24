@@ -130,18 +130,6 @@ Proactive inventory management with intelligent alerts:
 
 ## 🔧 Configuration
 
-### Environment Variables
-Create a `.env.local` file for custom configuration:
-
-```env
-# API Configuration (if using external APIs)
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
-
-# Feature Flags
-NEXT_PUBLIC_ENABLE_DARK_MODE=true
-NEXT_PUBLIC_ENABLE_EXPORTS=true
-```
-
 ### Data Storage
 The system uses JSON files for data persistence. In production, replace with a database:
 - `data/products.json` - Product catalog
