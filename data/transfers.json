@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "productId": 3,
+    "fromWarehouseId": 1,
+    "toWarehouseId": 2,
+    "quantity": 298,
+    "notes": "",
+    "date": "2025-10-24T09:38:12.766Z",
+    "status": "completed"
+  },
+  {
+    "id": 2,
+    "productId": 3,
+    "fromWarehouseId": 1,
+    "toWarehouseId": 2,
+    "quantity": 100,
+    "notes": "",
+    "date": "2025-10-24T09:38:32.905Z",
+    "status": "completed"
+  }
+]
